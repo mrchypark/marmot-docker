@@ -6,6 +6,6 @@ RUN curl -L -o marmot.tar.gz https://github.com/maxpert/marmot/releases/download
   && tar -xzvf marmot.tar.gz 
 
 FROM gcr.io/distroless/static-debian12
-COPY --from=binary /temp/marmot /
+COPY --from=binary /temp/marmot /marmot
 
-CMD [ "marmot" ]
+CMD [ "/marmot" ]
